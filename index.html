@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Gerar 4503 linhas de dados de exemplo
+coluna_1 = [f'Valor {i}' for i in range(1, 4504)]  # Criando a Coluna 1 com 4503 valores
+coluna_2 = [f'Dado {i}' for i in range(1, 4504)]   # Criando a Coluna 2 com 4503 valores
+
+# Criar um DataFrame com as duas colunas
+df = pd.DataFrame({
+    'Coluna 1': coluna_1,
+    'Coluna 2': coluna_2
+})
+
+# Salvar o DataFrame como um arquivo Excel
+df.to_excel('planilha_com_4503_linhas.xlsx', index=False, engine='openpyxl')
+
+print("Planilha criada com sucesso!")
